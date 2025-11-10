@@ -1,28 +1,32 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Showcase from './components/Showcase';
+import Customizer from './components/Customizer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Footer() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <footer id="about" className="w-full bg-[#0A0A10] py-12 text-white">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <h3 className="text-xl font-semibold">Nebula Shoes</h3>
+            <p className="mt-2 max-w-md text-sm text-white/70">Bold, vibrant footwear with interactive 3D experiences and color-morphing gradients. Designed for the future.</p>
+          </div>
+          <div className="text-sm text-white/60">© {new Date().getFullYear()} Nebula Shoes. All rights reserved.</div>
         </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#0A0A10] font-inter">
+      <Navbar />
+      <Hero />
+      <Showcase />
+      <Customizer />
+      <Footer />
+    </div>
+  );
+}
